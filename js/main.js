@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-    $.getJSON("http://api.cbssports.com/fantasy/league/teams?access_token=$access_token&response" function(data) {
+    $access_token = '[your token here]';
+    teams;
+  
+    $.getJSON("http://api.cbssports.com/fantasy/league/teams?access_token=" + $access_token + "&response" function(data) {
 
-            teams = data.body,
+            teams = data.body;
 
             $('#output').empty();
 
-           	$('#output').append('<p>teams</p>');
+           	$('#output').append('<p>' + teams + '</p>');
 
               
     }); // end getJson call
